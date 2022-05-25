@@ -1,22 +1,30 @@
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/globals.css'
 import { getCookie } from './utils';
 
-const enabledLogin = false;
-
 function MyApp({ Component, pageProps }) {
+  const [userName, setUserName] = useState('');
   const router = useRouter()
-  const user = getCookie('user')
-  const loading = false;
+  const { pathname } = router;
+  const isLogin = pathname.includes('login')
 
   useEffect(() => {
-    if (!(user || loading) && enabledLogin) {
+    const userNameCookie = getCookie('userName');
+    if (!userNameCookie) {
       router.push('/login')
+    } else {
+      setUserName(userNameCookie)
     }
-  }, [user, loading]);
+  }, []);
 
-  return <Component {...pageProps} />
+  if (!userName && !isLogin) {
+    return (
+      <center className='loading-label'>loading...</center>
+    );
+  }
+
+  return <Component {...pageProps} userName={userName} />
 }
 
 export default MyApp

@@ -1,13 +1,21 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
-import { setCookie } from '../utils'
+import { useEffect, useState } from 'react'
+import { Button, ComponentLabel, Input } from '../../components'
+import { getCookie, setCookie } from '../utils'
 
 export default function Login() {
-  const [account, setAccount] = useState('')
-  const [password, setPassword] = useState('')
+  const [account, setAccount] = useState('admin')
+  const [password, setPassword] = useState('admin')
   const [errorMsg, setErrorMsg] = useState('')
   const router = useRouter()
+
+  useEffect(() => {
+    const userNameCookie = getCookie('userName');
+    if (userNameCookie) {
+      router.push('/')
+    }
+  }, []);
 
   const handleLogin = () => {
     setErrorMsg('');
@@ -24,10 +32,10 @@ export default function Login() {
     fetch('http://localhost:3000/api/login', requestBody)
       .then(response => response.json())
       .then(res => {
-        const { account } = res;
-        if (account) {
-          setCookie('user', account);
-          router.push('/');
+        const { name } = res;
+        if (name) {
+          setCookie('userName', name);
+          router.reload();
         } else {
           setErrorMsg('Username or password is incorrect')
         }
@@ -53,29 +61,32 @@ export default function Login() {
         <center>
           <h1>Login</h1>
 
-          <div>
-            User Name:
-            <input
-              value={account}
-              onChange={e => setAccount(e.target.value)}
-              placeholder="admin"
-              onKeyDown={handleEnter}
-            />
+          <div style={{ width: 300 }}>
+            <ComponentLabel label="User Name">
+              <Input
+                value={account}
+                onChange={e => setAccount(e.target.value)}
+                placeholder="admin"
+                onKeyDown={handleEnter}
+              />
+            </ComponentLabel>
+
+            <ComponentLabel label="Password">
+              <Input
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                placeholder="admin"
+                onKeyDown={handleEnter}
+              />
+            </ComponentLabel>
           </div>
+
           <div>
-            Password:
-            <input
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              placeholder="admin"
-              onKeyDown={handleEnter}
-            />
+            <Button onClick={handleLogin}>Login</Button>
           </div>
+
           <div style={{ color: 'red' }}>
             {errorMsg}
-          </div>
-          <div>
-            <button onClick={handleLogin}>Login</button>
           </div>
         </center>
       </div>

@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 export default function FetchAPI({ data }) {
-  // console.log(data);
   return (
     <div>
       <Head>

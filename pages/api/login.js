@@ -1,5 +1,4 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { setCookies } from 'cookies-next';
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
@@ -9,10 +8,9 @@ export default function handler(req, res) {
 
     if (account === 'admin' && password === 'admin') {
       userLogin = account;
-      setCookies(account);
     }
 
-    res.status(200).json({ account: userLogin })
+    res.status(200).json({ name: userLogin })
   } else {
     // Handle any other HTTP method
   }

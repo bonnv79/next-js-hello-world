@@ -5,7 +5,6 @@ export default function Router1() {
   const router = useRouter()
   const { query, pathname } = router || {}
   const { id } = query || {};
-  console.log(router)
 
   return (
     <div>
