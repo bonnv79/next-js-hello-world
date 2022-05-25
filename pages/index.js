@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Button } from '../components'
-import styles from '../styles/Home.module.css'
+import { Button, Card } from '../components'
+import styles from '../styles/Home.module.scss'
 import { setCookie } from './utils'
 
 export default function Home({ userName }) {
@@ -39,26 +38,11 @@ export default function Home({ userName }) {
         </p>
 
         <div className={styles.grid}>
-          <Link href="/hello-world">
-            <a className={styles.card}>
-              <h2>Hello World</h2>
-              <p>Click to view page details</p>
-            </a>
-          </Link>
+          <Card href="/hello-world" title="Hello World" />
 
-          <Link href="/fetch-api">
-            <a className={styles.card}>
-              <h2>Fetch API</h2>
-              <p>Click to view page details</p>
-            </a>
-          </Link>
+          <Card href="/fetch-api" title="Fetch API" />
 
-          <Link href="/router">
-            <a className={styles.card}>
-              <h2>Router</h2>
-              <p>Click to view page details</p>
-            </a>
-          </Link>
+          <Card href="/router" title="Router" />
         </div>
       </main>
 

@@ -28,7 +28,6 @@ export default function Router() {
               router.push({
                 pathname: '/router/router-1/',
                 query: { id: '1' },
-                asPath: '/router/router-1/1'
               })
             }}
           >

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import { getCookie } from './utils';
 
 function MyApp({ Component, pageProps }) {
