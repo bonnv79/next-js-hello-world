@@ -1,7 +1,12 @@
 {
-  "name": "my-app",
+  "name": "next-js-hello-world",
   "version": "1.0.0",
   "private": false,
+  "description": "next-js-hello-world",
+  "author": "bonnv79",
+  "license": "MIT",
+  "repository": "https://github.com/bonnv79/next-js-hello-world",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -4,3 +4,5 @@
 - Pages: Home, Hello World, Fetch API, Router, Sign in
 - Function: sign in, logout
 - Relationship: sass, debug by visual studio code
+- improvement: update package.json to deploy on vercel
+

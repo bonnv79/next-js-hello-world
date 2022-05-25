@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { Button, ComponentLabel, Input } from '../../components'
+import { ROUTER_PATH } from '../constants'
 import { getCookie, setCookie } from '../utils'
 
 export default function Login() {
@@ -13,7 +14,7 @@ export default function Login() {
   useEffect(() => {
     const userNameCookie = getCookie('userName');
     if (userNameCookie) {
-      router.push('/')
+      router.push(ROUTER_PATH.HOME)
     }
   }, []);
 
