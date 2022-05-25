@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Card } from '../components'
 import styles from '../styles/Home.module.scss'
-import { ROUTER_PATH } from './constants'
+import { ROUTER_PATH } from '../common/constants'
 
 export default function Home() {
   return (

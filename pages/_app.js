@@ -2,11 +2,11 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import '../styles/globals.scss'
 import styles from '../styles/app.module.scss'
-import { getCookie, setCookie } from './utils';
+import { getCookie, setCookie } from '../common/utils';
 import { Button } from '../components';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ROUTER_PATH } from './constants';
+import { ROUTER_PATH } from '../common/constants';
 
 function MyApp({ Component, pageProps }) {
   const [userName, setUserName] = useState('');

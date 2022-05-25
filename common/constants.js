@@ -6,3 +6,5 @@ export const ROUTER_PATH = {
   ROUTER: '/router',
   ROUTER_1: '/router/router-1',
 }
+
+export default {}

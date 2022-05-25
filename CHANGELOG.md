@@ -5,4 +5,5 @@
 - Function: sign in, logout
 - Relationship: sass, debug by visual studio code
 - improvement: update package.json to deploy on vercel
+- improvement: move constants and utils file to common folder
 

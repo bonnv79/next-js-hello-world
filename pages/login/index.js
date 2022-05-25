@@ -2,8 +2,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { Button, ComponentLabel, Input } from '../../components'
-import { ROUTER_PATH } from '../constants'
-import { getCookie, setCookie } from '../utils'
+import { ROUTER_PATH } from '../../common/constants'
+import { getCookie, setCookie } from '../../common/utils'
 
 export default function Login() {
   const [account, setAccount] = useState('admin')
