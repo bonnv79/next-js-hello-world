@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { ROUTER_PATH } from '../constants'
+import { Button } from '../../components'
 
 export default function Router() {
   const router = useRouter()
@@ -13,26 +14,20 @@ export default function Router() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <Link href="/">
-          <a>
-            Back Home
-          </a>
-        </Link>
-
         <center>
           <h1>Router</h1>
 
-          <button
+          <Button
             type="button"
             onClick={() => {
               router.push({
-                pathname: '/router/router-1/',
+                pathname: ROUTER_PATH.ROUTER_1,
                 query: { id: '1' },
               })
             }}
           >
             Go to Router 1
-          </button>
+          </Button>
         </center>
       </div>
     </div>

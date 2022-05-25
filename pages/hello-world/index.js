@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
 export default function HelloWorld() {
   return (
@@ -10,12 +9,6 @@ export default function HelloWorld() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <Link href="/">
-          <a>
-            Back Home
-          </a>
-        </Link>
-
         <center>
           <h1>Hello world</h1>
         </center>

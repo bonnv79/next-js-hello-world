@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
 export default function FetchAPI({ data }) {
   return (
@@ -10,12 +9,6 @@ export default function FetchAPI({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <Link href="/">
-          <a>
-            Back Home
-          </a>
-        </Link>
-
         <center>
           <h1>Data get from server</h1>
           <p>Name: {data.name}</p>

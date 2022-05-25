@@ -1,0 +1,38 @@
+.header {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+
+  .left, 
+  .right {
+    display: flex;
+    align-items: center;
+  }
+
+  .left {
+    justify-content: flex-start;
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5em;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .right {
+    flex: 1;
+    justify-content: flex-end;
+
+    .user {
+      padding: 0 10px;
+      font-size: 0.9em;
+      justify-content: flex-end;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

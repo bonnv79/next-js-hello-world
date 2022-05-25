@@ -59,7 +59,7 @@ export default function Login() {
       </Head>
       <div>
         <center>
-          <h1>Login</h1>
+          <h1>Sign in</h1>
 
           <div style={{ width: 300 }}>
             <ComponentLabel label="User Name">
@@ -82,7 +82,7 @@ export default function Login() {
           </div>
 
           <div>
-            <Button onClick={handleLogin}>Login</Button>
+            <Button onClick={handleLogin}>Sign in</Button>
           </div>
 
           <div style={{ color: 'red' }}>

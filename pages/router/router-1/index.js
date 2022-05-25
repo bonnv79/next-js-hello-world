@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { Button } from '../../../components'
 
 export default function Router1() {
   const router = useRouter()
@@ -14,15 +15,15 @@ export default function Router1() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <button type="button" onClick={() => router.back()}>
-          Back Router
-        </button>
-
         <center>
           <h1>Router 1</h1>
 
           <div>Pathname: {pathname}</div>
           <div>Id: {id}</div>
+
+          <Button type="button" onClick={() => router.back()}>
+            Back Router
+          </Button>
         </center>
       </div>
     </div>
