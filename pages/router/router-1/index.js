@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Button } from '../../../components'
+import { Button } from 'components'
 
 export default function Router1() {
   const router = useRouter()

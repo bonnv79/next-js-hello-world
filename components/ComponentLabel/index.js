@@ -8,3 +8,5 @@ export function ComponentLabel({ label, children }) {
     </div>
   )
 }
+
+export default ComponentLabel

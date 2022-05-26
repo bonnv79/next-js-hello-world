@@ -12,3 +12,5 @@ export function Card(props) {
     </Link>
   )
 }
+
+export default Card

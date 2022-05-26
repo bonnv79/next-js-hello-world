@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Card } from '../components'
-import styles from '../styles/Home.module.scss'
-import { ROUTER_PATH } from '../common/constants'
+import { Card } from 'components'
+import styles from 'styles/Home.module.scss'
+import { ROUTER_PATH } from 'constants/routerPath'
 
 export default function Home() {
   return (

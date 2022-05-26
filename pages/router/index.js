@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { ROUTER_PATH } from '../../common/constants'
-import { Button } from '../../components'
+import { ROUTER_PATH } from 'constants/routerPath'
+import { Button } from 'components'
 
 export default function Router() {
   const router = useRouter()

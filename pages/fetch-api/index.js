@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { API_FETCH_API } from '../../common/apiPath'
+import { API_FETCH_API } from 'constants/apiPath'
 
 export default function FetchAPI({ data }) {
   return (

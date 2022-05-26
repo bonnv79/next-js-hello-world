@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { Button, ComponentLabel, Input } from '../../components'
-import { ROUTER_PATH } from '../../common/constants'
-import { getCookie, setCookie } from '../../common/utils'
-import { API_LOGIN } from '../../common/apiPath'
+import { Button, ComponentLabel, Input } from 'components'
+import { ROUTER_PATH } from 'constants/routerPath'
+import { getCookie, setCookie } from 'utils/cookies'
+import { API_LOGIN } from 'constants/apiPath'
 
 export default function Login() {
   const [account, setAccount] = useState('admin')
