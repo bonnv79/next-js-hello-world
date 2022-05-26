@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { API_FETCH_API } from '../../common/apiPath'
 
 export default function FetchAPI({ data }) {
   return (
@@ -19,7 +20,7 @@ export default function FetchAPI({ data }) {
 }
 
 FetchAPI.getInitialProps = async (ctx) => {
-  const res = await fetch('http://localhost:3000/api/fetch-api')
+  const res = await fetch(API_FETCH_API)
   const json = await res.json()
   return { data: json }
 }

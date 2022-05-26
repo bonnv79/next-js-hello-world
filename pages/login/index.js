@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Button, ComponentLabel, Input } from '../../components'
 import { ROUTER_PATH } from '../../common/constants'
 import { getCookie, setCookie } from '../../common/utils'
+import { API_LOGIN } from '../../common/apiPath'
 
 export default function Login() {
   const [account, setAccount] = useState('admin')
@@ -30,7 +31,7 @@ export default function Login() {
       })
     };
 
-    fetch('http://localhost:3000/api/login', requestBody)
+    fetch(API_LOGIN, requestBody)
       .then(response => response.json())
       .then(res => {
         const { name } = res;

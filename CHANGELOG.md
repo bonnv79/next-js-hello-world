@@ -7,3 +7,5 @@
 - improvement: update package.json to deploy on vercel
 - improvement: move constants and utils file to common folder
 
+##### Release date: 26/5/2022
+- improvement: update API_PATH
