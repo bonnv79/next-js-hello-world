@@ -31,6 +31,8 @@ export default function Home() {
           <Card href={ROUTER_PATH.FETCH_API} title="Fetch API" />
 
           <Card href={ROUTER_PATH.ROUTER} title="Router" />
+
+          <Card href={ROUTER_PATH.POST} title="POST" />
         </div>
       </main>
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import '../styles/globals.scss'
 import styles from '../styles/app.module.scss'
 import { getCookie, setCookie } from 'utils/cookies';
-import { Button } from 'components';
+import { Breadcrumbs, Button } from 'components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ROUTER_PATH } from 'constants/routerPath';
@@ -58,6 +58,7 @@ function MyApp({ Component, pageProps }) {
           {isLogin && <Button onClick={handleSignUp}>Sign up</Button>}
         </div>
       </div>
+      {!isLogin && <Breadcrumbs pathname={pathname} />}
 
       <Component {...pageProps} />
     </div>

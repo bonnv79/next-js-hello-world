@@ -12,3 +12,4 @@
 - improvement: update absolute imports and module path aliases, update UI for home page
 - improvement: update demo link in readme.md, add card, backdrop comment
 - fix-bug: Only absolute URLs are supported
+- new-feature: add PostPage, Breadcrumbs, DetailPost
