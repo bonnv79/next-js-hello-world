@@ -3,19 +3,19 @@
 }
 
 .main {
-  min-height: 100vh;
+  min-height: calc(100vh - 119px);
   padding: 1em;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .footer {
+  height: 55px;
   display: flex;
   flex: 1;
-  padding: 2rem 0;
+  padding: 1em;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
@@ -41,6 +41,7 @@
   a {
     color: #0070f3;
     text-decoration: none;
+
     &:hover,
     &:focus,
     &:active {
@@ -50,7 +51,7 @@
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 2rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -75,6 +76,10 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.version {
+  font-size: 0.8em;
 }
 
 @media (max-width: 600px) {

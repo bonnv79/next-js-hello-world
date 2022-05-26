@@ -9,4 +9,4 @@
 
 ##### Release date: 26/5/2022
 - improvement: update API_PATH
-- improvement: update absolute imports and module path aliases
+- improvement: update absolute imports and module path aliases, update UI for home page
