@@ -1,15 +1,14 @@
 {
+  "/_app": "pages/_app.js",
   "/api/fetch-api": "pages/api/fetch-api.js",
   "/api/login": "pages/api/login.js",
-  "/constants": "pages/constants.js",
-  "/_error": "pages/_error.js",
-  "/hello-world": "pages/hello-world.js",
-  "/login": "pages/login.js",
-  "/_app": "pages/_app.js",
   "/fetch-api": "pages/fetch-api.js",
-  "/router/router-1": "pages/router/router-1.js",
-  "/router": "pages/router.js",
-  "/utils": "pages/utils.js",
-  "/": "pages/index.js",
-  "/_document": "pages/_document.js"
+  "/hello-world": "pages/hello-world.html",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
+  "/router": "pages/router.html",
+  "/router/router-1": "pages/router/router-1.html",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
 }
