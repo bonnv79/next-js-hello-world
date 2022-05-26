@@ -3,8 +3,10 @@ import Image from 'next/image'
 import { Card } from 'components'
 import styles from 'styles/Home.module.scss'
 import { ROUTER_PATH } from 'constants/routerPath'
+import config from 'package.json';
 
 export default function Home() {
+  const { name, version } = config || {};
   return (
     <div className={styles.container}>
       <Head>
@@ -39,7 +41,7 @@ export default function Home() {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-        <span className={styles.version}>v1.0.1</span>
+        <span className={styles.version}>{`${name}`.toUpperCase() + ` / v${version}`}</span>
       </footer>
     </div>
   )

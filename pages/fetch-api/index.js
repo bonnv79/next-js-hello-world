@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { API_FETCH_API } from 'constants/apiPath'
+import { getUrl } from 'utils'
 
 export default function FetchAPI({ data }) {
   return (
@@ -20,7 +21,8 @@ export default function FetchAPI({ data }) {
 }
 
 FetchAPI.getInitialProps = async (ctx) => {
-  const res = await fetch(API_FETCH_API)
+  const path = getUrl(ctx, API_FETCH_API)
+  const res = await fetch(path)
   const json = await res.json()
   return { data: json }
 }

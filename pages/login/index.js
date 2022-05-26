@@ -1,13 +1,15 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { Button, ComponentLabel, Input } from 'components'
+import { Button, ComponentLabel, Input, Backdrop } from 'components'
 import { ROUTER_PATH } from 'constants/routerPath'
 import { getCookie, setCookie } from 'utils/cookies'
 import { API_LOGIN } from 'constants/apiPath'
 import styles from './styles.module.scss'
+import { sleep } from 'utils'
 
 export default function Login() {
+  const [loading, setLoading] = useState(false)
   const [account, setAccount] = useState('admin')
   const [password, setPassword] = useState('admin')
   const [errorMsg, setErrorMsg] = useState('')
@@ -21,6 +23,7 @@ export default function Login() {
   }, []);
 
   const handleLogin = () => {
+    setLoading(true);
     setErrorMsg('');
 
     const requestBody = {
@@ -34,7 +37,10 @@ export default function Login() {
 
     fetch(API_LOGIN, requestBody)
       .then(response => response.json())
-      .then(res => {
+      .then(async res => {
+        await sleep(1000)
+        setLoading(false);
+
         const { name } = res;
         if (name) {
           setCookie('userName', name);
@@ -93,6 +99,7 @@ export default function Login() {
           </div>
         </center>
       </div>
+      <Backdrop open={loading} />
     </div>
   )
 }

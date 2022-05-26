@@ -10,3 +10,5 @@
 ##### Release date: 26/5/2022
 - improvement: update API_PATH
 - improvement: update absolute imports and module path aliases, update UI for home page
+- improvement: update demo link in readme.md, add card, backdrop comment
+- fix-bug: Only absolute URLs are supported
