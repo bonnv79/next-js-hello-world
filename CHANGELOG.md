@@ -18,3 +18,4 @@
 - new-feature: add HeaderAction, CreatePost, DataNotFound, ErrorMsg, Container
 - new-feature: add TextArea
 - improvement: Modify CreatePost
+- fix-bug: fix post api, user can not create and edit post

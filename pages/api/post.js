@@ -43,6 +43,7 @@ const hanlderPost = (req, res) => {
         posts[index] = body;
       } else {
         res.status(500).json({ error: ERROR_MSG.DATA_NOT_FOUND })
+        return;
       }
 
     } else {
@@ -54,6 +55,7 @@ const hanlderPost = (req, res) => {
     }
 
     res.status(200).json({ data: newPost })
+    return;
   }
   res.status(500).json({ error: 'Invalid data' })
 }
