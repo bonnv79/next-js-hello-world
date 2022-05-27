@@ -16,3 +16,5 @@
 
 ##### Release date: 27/5/2022
 - new-feature: add HeaderAction, CreatePost, DataNotFound, ErrorMsg, Container
+- new-feature: add TextArea
+- improvement: Modify CreatePost

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from './styles.module.scss'
-import { Backdrop, Button, ComponentLabel, Container, ErrorMsg, HeaderAction, Input } from 'components';
+import { TextArea, Backdrop, Button, ComponentLabel, Container, ErrorMsg, HeaderAction, Input } from 'components';
 import { useState } from 'react';
 import { API_POST } from 'constants/apiPath';
 import { useRouter } from 'next/router';
@@ -26,8 +26,8 @@ export default function CreatePost({ data, id }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           id,
-          title: postTitle,
-          content: postContent
+          title: `${postTitle}`.trim(),
+          content: `${postContent}`.trim()
         })
       })
       .then(response => response.json())
@@ -63,25 +63,29 @@ export default function CreatePost({ data, id }) {
         </HeaderAction>
 
         <div className={styles.main}>
-          <div className={styles.form}>
-            <ComponentLabel label="Title">
-              <Input
-                value={postTitle}
-                onChange={e => setPostTitle(e.target.value)}
-                placeholder="Input..."
-              />
-            </ComponentLabel>
+          <center>
+            <div className={styles.form}>
+              <ComponentLabel label="Title" labelWidth={64}>
+                <Input
+                  value={postTitle}
+                  onChange={e => setPostTitle(e.target.value)}
+                  placeholder="Input..."
+                />
+              </ComponentLabel>
 
-            <ComponentLabel label="Content" className="marginZero">
-              <Input
-                value={postContent}
-                onChange={e => setPostContent(e.target.value)}
-                placeholder="Input..."
-              />
-            </ComponentLabel>
+              <ComponentLabel label="Content" className="marginZero" labelWidth={64}>
+                <TextArea
+                  rows={10}
+                  value={postContent}
+                  onChange={e => setPostContent(e.target.value)}
+                  placeholder="Input..."
 
-            <ErrorMsg>{errorMsg}</ErrorMsg>
-          </div>
+                />
+              </ComponentLabel>
+
+              <ErrorMsg>{errorMsg}</ErrorMsg>
+            </div>
+          </center>
         </div>
       </Container>
       <Backdrop open={loading} />

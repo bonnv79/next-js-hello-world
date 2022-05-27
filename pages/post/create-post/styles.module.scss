@@ -1,11 +1,8 @@
 .main {
-  padding-top: 32px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: flex-start;
+  padding-top: 1em;
 
   .form {
-    width: 360px;
+    width: 100%;
+    max-width: 800px;
   }
 }
