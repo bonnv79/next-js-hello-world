@@ -1,4 +1,4 @@
-.button  {
+.button {
   border: 1px solid #9d9d9d;
   transition: color 0.15s ease, border-color 0.15s ease;
   border-radius: 10px;
@@ -9,5 +9,11 @@
   &:hover {
     color: #0070f3;
     border-color: #0070f3;
+  }
+
+  &:disabled {
+    color: inherit;
+    border-color: inherit;
+    opacity: 0.5;
   }
 }

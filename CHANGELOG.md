@@ -13,3 +13,6 @@
 - improvement: update demo link in readme.md, add card, backdrop comment
 - fix-bug: Only absolute URLs are supported
 - new-feature: add PostPage, Breadcrumbs, DetailPost
+
+##### Release date: 27/5/2022
+- new-feature: add HeaderAction, CreatePost, DataNotFound, ErrorMsg, Container

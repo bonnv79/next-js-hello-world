@@ -1,3 +1,5 @@
+import { ERROR_MSG } from "constants/msg";
+
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const posts = [
   {
@@ -25,16 +27,35 @@ const hanlderGet = (req, res) => {
   let arr = url?.split("?");
   const id = arr && arr.length > 1 ? arr[1] : null;
 
-  const data = id ? posts.find(item => item.id === id) : posts;
+  const data = id ? posts.find(item => `${item.id}` === `${id}`) : posts;
 
   res.status(200).json({ data })
 }
 
 const hanlderPost = (req, res) => {
-  // const { body } = req;
-  // const { data } = body || {};
+  const { body } = req;
+  if (body && body.title && body.content) {
+    let newPost = body;
+    if (body.id) {
+      const index = posts.findIndex(item => `${item.id}` === `${body.id}`);
 
-  res.status(200).json({})
+      if (index !== -1) {
+        posts[index] = body;
+      } else {
+        res.status(500).json({ error: ERROR_MSG.DATA_NOT_FOUND })
+      }
+
+    } else {
+      newPost = {
+        ...body,
+        id: Number(new Date())
+      }
+      posts.unshift(newPost)
+    }
+
+    res.status(200).json({ data: newPost })
+  }
+  res.status(500).json({ error: 'Invalid data' })
 }
 
 export default function handler(req, res) {
@@ -45,11 +66,5 @@ export default function handler(req, res) {
     case 'POST':
       hanlderPost(req, res)
       break;
-    // case 'PUT':
-    //   hanlderPost(req)
-    //   break;
-    // case 'DELETE':
-    //   hanlderPost(req)
-    //   break;
   }
 }

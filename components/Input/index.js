@@ -1,9 +1,9 @@
 import styles from './styles.module.scss'
 
-export function Input(props) {
+export function Input({ className, ...props }) {
   return (
     <input
-      className={`${styles.input} ${props.className}`}
+      className={`${styles.input} ${className}`}
       {...props}
     />
   )

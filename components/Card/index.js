@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import styles from './styles.module.scss'
 
-export function Card(props) {
-  const { href, title, children = 'Click to view page details' } = props;
+export function Card({ href, title, children = 'Click to view page details' }) {
   return (
     <Link href={href}>
       <a className={styles.card}>

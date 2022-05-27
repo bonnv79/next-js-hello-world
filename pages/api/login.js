@@ -1,16 +1,17 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
+import { ERROR_MSG } from "constants/msg";
+
 export default function handler(req, res) {
   if (req.method === 'POST') {
     const { body } = req;
     const { account, password } = body || {};
-    let userLogin = null;
 
     if (account === 'admin' && password === 'admin') {
-      userLogin = account;
+      res.status(200).json({ name: account })
+    } else {
+      res.status(500).json({ error: ERROR_MSG.USERNAME_OR_PASSWORD_IS_INCORRECT })
     }
-
-    res.status(200).json({ name: userLogin })
   } else {
     // Handle any other HTTP method
   }

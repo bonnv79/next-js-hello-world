@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { Button, ComponentLabel, Input, Backdrop } from 'components'
+import { Button, ComponentLabel, Input, Backdrop, ErrorMsg } from 'components'
 import { ROUTER_PATH } from 'constants/routerPath'
 import { getCookie, setCookie } from 'utils/cookies'
 import { API_LOGIN } from 'constants/apiPath'
@@ -38,15 +38,15 @@ export default function Login() {
     fetch(API_LOGIN, requestBody)
       .then(response => response.json())
       .then(async res => {
-        await sleep(1000)
+        await sleep(500)
         setLoading(false);
 
-        const { name } = res;
-        if (name) {
+        const { name, error } = res;
+        if (name && !error) {
           setCookie('userName', name);
           router.reload();
         } else {
-          setErrorMsg('Username or password is incorrect')
+          setErrorMsg(error)
         }
       });
   }
@@ -94,9 +94,7 @@ export default function Login() {
             <Button onClick={handleLogin}>Sign in</Button>
           </div>
 
-          <div style={{ color: 'red' }}>
-            {errorMsg}
-          </div>
+          <ErrorMsg>{errorMsg}</ErrorMsg>
         </center>
       </div>
       <Backdrop open={loading} />

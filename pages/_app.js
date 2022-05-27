@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import '../styles/globals.scss'
-import styles from '../styles/app.module.scss'
+import 'styles/globals.scss'
+import 'styles/common.scss'
+import styles from 'styles/app.module.scss'
 import { getCookie, setCookie } from 'utils/cookies';
 import { Breadcrumbs, Button } from 'components';
 import Image from 'next/image';

@@ -1,9 +1,9 @@
 import styles from './styles.module.scss'
 
-export function Button(props) {
+export function Button({ className, ...props }) {
   return (
     <button
-      className={`${styles.button} ${props.className}`}
+      className={`${styles.button} ${className}`}
       {...props}
     />
   )

@@ -15,7 +15,7 @@ export function Breadcrumbs({ pathname }) {
       data.push({
         id: `id-${index}`,
         href: PARSE_ROUTER_PATH_BREADCRUMBS[item] || `/${item}`,
-        name: item
+        name: `${item}`.replace('-', ' ')
       })
     }
   });
