@@ -38,3 +38,37 @@
     }
   }
 }
+
+.body {
+  min-height: calc(100vh - 164px);
+  display: grid;
+}
+
+.footer {
+  height: 55px;
+  display: flex;
+  flex: 1;
+  padding: 1em;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    .logo {
+      height: 1em;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .version {
+    font-size: 0.8em;
+    position: absolute;
+    right: 1em;
+  }
+}

@@ -8,8 +8,10 @@ import { Breadcrumbs, Button } from 'components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ROUTER_PATH } from 'constants/routerPath';
+import config from 'package.json';
 
 function MyApp({ Component, pageProps }) {
+  const { name, version } = config || {};
   const [userName, setUserName] = useState('');
   const router = useRouter()
   const { pathname } = router;
@@ -59,9 +61,23 @@ function MyApp({ Component, pageProps }) {
           {isLogin && <Button onClick={handleSignUp}>Sign up</Button>}
         </div>
       </div>
-      {!isLogin && <Breadcrumbs pathname={pathname} />}
+      <div style={{ visibility: isLogin ? 'hidden' : '' }}>
+        <Breadcrumbs pathname={pathname} />
+      </div>
 
-      <Component {...pageProps} />
+      <div className={styles.body}>
+        <Component {...pageProps} />
+      </div>
+
+      <footer className={styles.footer}>
+        <a rel="noopener noreferrer">
+          Powered by{' '}
+          <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span>
+        </a>
+        <span className={styles.version}>{`${name}`.toUpperCase() + ` / v${version}`}</span>
+      </footer>
     </div>
   )
 }

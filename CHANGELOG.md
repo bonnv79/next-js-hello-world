@@ -19,3 +19,4 @@
 - new-feature: add TextArea
 - improvement: Modify CreatePost
 - fix-bug: fix post api, user can not create and edit post
+- improvement: move footer from index.js to app.js
